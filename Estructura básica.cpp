@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 
+
 class Environment {
 private:
     std::map<std::string, int> symbolTable;
@@ -39,7 +40,7 @@ public:
 
     // Puedes agregar más métodos según las necesidades de tu entorno
 };
-
+int a;
 int main() {
     // Ejemplo de uso
     Environment myEnvironment;
@@ -48,6 +49,7 @@ int main() {
     myEnvironment.insert("x", 10);
     myEnvironment.insert("y", 20);
     myEnvironment.insert("z", 30);
+
 
     // Obtener valores de la tabla
     std::cout << "Valor de x: " << myEnvironment.getSymbolValue("x") << std::endl;
