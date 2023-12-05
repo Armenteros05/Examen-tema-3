@@ -49,9 +49,9 @@ public:
         auto it = symbolTable.find(symbol);
         if (it != symbolTable.end()) {
             symbolTable.erase(it); // Elimina el símbolo de la tabla
-            std::cout << "Símbolo '" << symbol << "' eliminado con éxito." << std::endl;
+            std::cout << "Simbolo '" << symbol << "' eliminado con exito." << std::endl;
         } else {
-            std::cerr << "Error: El símbolo '" << symbol << "' no existe en el entorno." << std::endl;
+            std::cerr << "Error: El simbolo '" << symbol << "' no existe en el entorno." << std::endl;
         }
     }
 
@@ -82,13 +82,13 @@ int main() {
     myEnvironment.addSymbol("name", "John");
 
     // Verificar si un símbolo existe
-    std::cout << "¿El símbolo 'x' existe? " << (myEnvironment.symbolExists("x") ? "Sí" : "No") << std::endl;
+    std::cout << "El simbolo 'x' existe? " << (myEnvironment.symbolExists("x") ? "Si" : "No") << std::endl;
 
     // Eliminar un símbolo
     myEnvironment.removeSymbol("y");
 
     // Verificar si el símbolo eliminado aún existe
-    std::cout << "¿El símbolo 'y' existe después de eliminarlo? " << (myEnvironment.symbolExists("y") ? "Sí" : "No") << std::endl;
+    std::cout << "El simbolo 'y' existe despues de eliminarlo? " << (myEnvironment.symbolExists("y") ? "Sí" : "No") << std::endl;
 
     // Imprimir todos los símbolos y sus valores
     myEnvironment.printEnvironment();
