@@ -40,7 +40,6 @@ public:
 
     // Puedes agregar más métodos según las necesidades de tu entorno
 };
-int a;
 int main() {
     // Ejemplo de uso
     Environment myEnvironment;
