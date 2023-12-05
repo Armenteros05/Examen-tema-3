@@ -12,6 +12,19 @@ public:
         symbolTable[symbol] = value;
     }
 
+    // Método para insertar un símbolo en el entorno, evitando conflictos
+    void insert(const std::string& symbol, int value) {
+        auto it = symbolTable.find(symbol);
+        if (it == symbolTable.end()) {
+            // El símbolo no existe, se puede insertar
+            addSymbol(symbol, value);
+        } else {
+            // El símbolo ya existe, manejo de conflicto
+            std::cerr << "Error: El símbolo '" << symbol << "' ya está definido." << std::endl;
+            // Puedes ajustar el manejo de conflictos según tus necesidades
+        }
+    }
+
     // Método para obtener el valor asociado a un símbolo en la tabla de símbolos
     int getSymbolValue(const std::string& symbol) const {
         auto it = symbolTable.find(symbol);
@@ -32,14 +45,13 @@ int main() {
     Environment myEnvironment;
 
     // Agregamos símbolos a la tabla
-    myEnvironment.addSymbol("x", 10);
-    myEnvironment.addSymbol("y", 20);
+    myEnvironment.insert("x", 10);
+    myEnvironment.insert("y", 20);
+    myEnvironment.insert("z", 30);
 
     // Obtener valores de la tabla
     std::cout << "Valor de x: " << myEnvironment.getSymbolValue("x") << std::endl;
     std::cout << "Valor de y: " << myEnvironment.getSymbolValue("y") << std::endl;
-
-    // Intentar obtener el valor de un símbolo no definido
     std::cout << "Valor de z: " << myEnvironment.getSymbolValue("z") << std::endl;
 
     return 0;
